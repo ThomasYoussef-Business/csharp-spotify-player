@@ -1,7 +1,14 @@
 ﻿namespace csharp_spotify_player {
     public class ContenutoRiproducibile : IContenutoRiproducibile {
-        public void Play() { }
-        public void Stop() { }
-        public void Pausa() { }
+        public StatoMedia Stato { get; private set; }
+        public void Play() {
+            Stato = StatoMedia.Playing;
+        }
+        public void Stop() {
+            Stato = StatoMedia.Stopped;
+        }
+        public void Pausa() {
+            Stato = StatoMedia.Paused;
+        }
     }
 }
