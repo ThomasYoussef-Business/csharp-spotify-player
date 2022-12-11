@@ -3,8 +3,10 @@
         // ATTRIBUTI
 
         // PROPRIETÀ
-        public string Nome { get; init; }
-        public uint Durata { get; init; }
+        public string Nome { get; protected init; }
+        public uint Durata { get; protected init; }
+        public string[] Autori { get; protected init; }
+        public int AnnoDiRilascio { get; private init; }
         public StatoContenutoRiproducibile Stato { get; protected set; } = StatoContenutoRiproducibile.Stopped;
 
         // COSTRUTTORI
@@ -12,6 +14,16 @@
             Nome = NomeValido(nome);
             Durata = durata;
         }
+
+        public ContenutoRiproducibile(string nome, uint durata, string[] autori) : this(nome, durata) {
+            Autori = AutoriValidi(autori);
+        }
+
+        public ContenutoRiproducibile(string nome, uint durata, string[] autori, int annoDiRilascio) : this(nome, durata, autori) {
+            AnnoDiRilascio = annoDiRilascio;
+        }
+
+
 
         // METODI PUBBLICI
         public virtual void Play() {
@@ -31,12 +43,20 @@
         }
 
         // METODI PRIVATI
-        private static string NomeValido(string nome) {
+        protected static string NomeValido(string nome) {
             if (!string.IsNullOrWhiteSpace(nome)) {
                 return nome;
             }
             else {
                 throw new ArgumentNullException(nameof(nome), $"{nameof(nome)} non può essere nullo o vuoto.");
+            }
+        }
+        protected static string[] AutoriValidi(string[] autori) {
+            if (!autori.Any()) {
+                throw new ArgumentException($"{nameof(autori)} non può essere vuoto", nameof(autori));
+            }
+            else {
+                return autori;
             }
         }
     }
