@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp-spotify-player", "cs
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6E1B035D-8F45-4070-AF2F-2CEF7A311142}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "csharp-spotify-playerTests1", "csharp-spotify-playerTests1\csharp-spotify-playerTests1.csproj", "{B960A11B-7196-447A-B50D-F0AE776708E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp-spotify-playerTests", "csharp-spotify-playerTests1\csharp-spotify-playerTests.csproj", "{B960A11B-7196-447A-B50D-F0AE776708E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

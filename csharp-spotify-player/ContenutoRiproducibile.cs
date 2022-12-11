@@ -5,7 +5,7 @@
         // PROPRIETÀ
         public string Nome { get; init; }
         public uint Durata { get; init; }
-        public StatoContenutoRiproducibile Stato { get; private set; } = StatoContenutoRiproducibile.Stopped;
+        public StatoContenutoRiproducibile Stato { get; protected set; } = StatoContenutoRiproducibile.Stopped;
 
         // COSTRUTTORI
         public ContenutoRiproducibile(string nome, uint durata) {
